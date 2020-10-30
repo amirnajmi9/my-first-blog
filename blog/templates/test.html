@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>وبگو | کاربرد تگ div در html</title>
+<!-- https://webgoo.ir -->
+<style type="text/css">
+	div{
+		display:inline-block; width:200px; height:200px; border:1px solid #999; background-color:#FC0; float:left; margin:4px;
+	}
+body{
+    font-family:Tahoma, Geneva, sans-serif;
+    direction:rtl;
+    font-size:12px;
+}
+</style>
+</head>
+<body>
+<!-- بلاک اصلی -->
+<div style="display:block; width:600px; height:auto; border:1px solid #999; background-color:#9CF; margin:0 auto; direction:rtl; padding:4px;">
+بلاک div شماره 1
+<!-- بلاک زیر مجموعه -->
+<div style="display:inline-block; width:200px; height:200px; border:1px solid #999; background-color:#6C9; float:left; margin:4px;">
+بلاک div شماره 2
+</div>
+<!-- بلاک زیر مجموعه -->
+<div style="display:inline-block; width:200px; height:200px; border:1px solid #999; background-color:#FC0; float:left; margin:4px;">
+بلاک div شماره 3
+</div>
+<!-- بلاک جدا کننده -->
+<div style="clear:both;"></div>
+<!-- بلاک زیر مجموعه -->
+<div style="display:block; width:590px; height:50px; border:1px solid #999; background-color:#CCC; margin:4px;">
+بلاک div شماره 4
+</div>
+<!-- بلاک جدا کننده -->
+<div style="clear:both;"></div>
+<!-- بستن بلاک اصلی -->
+</div>
+<hr />
+با استفاده از تنظیم بلاک های div به صورت تو در تو و بهره بردن از css، طراحان وب قالب ها و طرح های خود را فرمت بندی می کنند.
+
+
+
+
+
+
+<ul class="result">
+    <li><div class="aDiv"></div></li>
+    <li><div class="aDiv"></div></li>
+    <li><div class="aDiv"></div></li>
+    <li><div class="aDiv"></div></li>
+</ul>
+
+</body>
+</html>

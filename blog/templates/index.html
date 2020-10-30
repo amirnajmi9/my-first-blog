@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ln</title>
+
+<style>
+#spanin{
+			display:inline-block;
+	}
+	a{
+			list-style: none;
+			font-size: .875rem;
+			color: #008CBA ;
+			font-size: 26px;
+			text-decoration:none;
+			margin-top: 30px;
+            font-family: IRANSans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+	}
+	.button {
+background-color: #008CBA;
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+}
+</style>
+</head>
+<body style="background-color: #dfdfdf;">
+
+    <a href="post/new/" style="background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;" class="button">ارسال اگهی</a>
+
+<br>
+<br>
+<br>
+
+<span id="spanin" style="width: 850px;  border-right: 4px solid #a62626; float:left; position: relative; display:inline-block;">
+    <div style="width: 850px;">
+{% if latest_post_list%}
+<ul>
+    {% for Post in latest_post_list %}
+    {% if Post.vrf == '1' %}
+    <div style="  width: 250px;
+         height: 250px;
+                   display:inline-block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;" class="lidiv"><li style="list-style-type:none;">
+    <a href="{% url 'blog:detail'  Post.id %}">{{Post.title}}</a><br>
+<img src="{% static Post.image.url %}" alt = "fds" width=160px height=160px></div>
+</li>
+    {% endif %}
+
+    {% endfor %}
+    {% endif %}
+
+</ul>
+</div>
+</span>
+
+<span style="float: right; position:fixed; margin-left: 100px; width: 200px">
+    <a href="/blog/khodro">خودرو</a><br><br>
+    <a href="/blog/khone">خونه</a><br><br>
+    <a href="/blog/hey">حیوانات</a><br><br>
+    <a href="/blog/estkh">استخدام</a><br><br>
+</span>
+
+
+
+</body>
+</html>

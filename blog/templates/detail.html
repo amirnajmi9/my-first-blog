@@ -1,0 +1,41 @@
+{% extends "main.html" %}
+{% load static %}
+
+
+{% block body %}
+
+
+<h1>{{ post.title }}</h1>
+
+<br>
+<br>
+<span style="width:850px; height:350px;
+           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+              text-align: center;
+              border:1px solid #999; background-color:#ffffff; float:left; margin:4px;
+">
+<div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+              text-align: center;
+              width:400px; height:300px; border:1px solid #999; background-color:#ffffff; float:left; margin:4px;
+          display:inline-block;" >{{ post.body }}
+</div>
+<div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+              text-align: center;
+              width:400px; height:300px; border:1px solid #999; background-color:#ffffff; float:left; margin:4px;
+          display:inline-block;">
+          <img src="{% static post.image.url %}" alt = "fds" width="400" height="300"></div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div style="	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+              text-align: center;
+               border:1px solid #999; background-color:#ffffff; float:left; margin:4px;
+			display:block;width:200px; height:30px; ">{{ post.user }}</div>
+</span>
+{% endblock %}

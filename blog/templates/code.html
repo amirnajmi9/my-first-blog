@@ -1,0 +1,68 @@
+<html>
+<head>
+    <title>Search</title>
+</head>
+<body>
+
+
+    <script>
+        function valid_mobile(){
+            var phone = String(document.querySelector(".number>input").value);
+
+            console.log(phone + typeof phone + phone.length + phone[0] + phone[1]);
+            if(phone.length>=1){
+                document.querySelector(".number>i:nth-of-type(2)").style.color="red";
+                document.querySelector(".number>i:nth-of-type(2)").style.cursor="pointer";
+            }
+            if(phone.length==2){
+//                phone.splice(1, 0, "-");
+                phone = phone + "-";
+                document.querySelector(".number>input").value=phone;
+            }
+            if(phone.length==6){
+//                phone.splice(1, 0, "-");
+                phone = phone + "-";
+                document.querySelector(".number>input").value=phone;
+            }
+
+            if(phone.length>=11){
+                document.querySelector(".number>input").setAttribute("readonly", "readonly");
+                document.querySelector(".number>i:nth-of-type(1)").style.fontSize="1em";
+            }
+
+            if(phone[0]==3){
+                if((phone[1]>=3 && phone[1]<=9) || phone[1]==undefined){
+
+                }
+                else if(phone[1]==4 || phone[1]<3){
+                    alert("your irancell number is not valid");
+                    document.querySelector(".number>input").value=null;
+                    document.querySelector(".number>input").value=3;
+                }
+            }
+            else{
+                alert("just irancell!");
+                document.querySelector(".number>input").value=null;
+            }
+
+
+        }
+
+        function clean(){
+            document.querySelector(".number>input").value=null;
+            document.querySelector(".number>i:nth-of-type(1)").style.color="gray";
+            document.querySelector(".number>i:nth-of-type(2)").style.color="gray";
+            document.querySelector(".number>input").removeAttribute("readonly");
+
+        }
+
+
+
+    </script>
+<form  action="{% url 'code' %}" method="post">
+    {% csrf_token %}
+    {{ codeform }}
+    <input type="submit" value="go" >
+</form>
+</body>
+</html>
